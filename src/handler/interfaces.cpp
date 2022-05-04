@@ -328,6 +328,7 @@ std::string subconverter(RESPONSE_CALLBACK_ARGS)
         lSimpleSubscription = true;
         break;
     case "clash"_hash: case "clashr"_hash: case "surge"_hash: case "quan"_hash: case "quanx"_hash: case "loon"_hash: case "surfboard"_hash: case "mellow"_hash:
+    case "surgeold"_hash: case "surgemini"_hash:
         break;
     default:
         *status_code = 400;
@@ -730,7 +731,7 @@ std::string subconverter(RESPONSE_CALLBACK_ARGS)
         if(argUpload)
             uploadGist(argTarget, argUploadPath, output_content, false);
         break;
-    case "surge"_hash:
+    case "surge"_hash: case "surgeold"_hash: case "surgemini"_hash:
 
         writeLog(0, "Generate target: Surge " + std::to_string(intSurgeVer), LOG_LEVEL_INFO);
 

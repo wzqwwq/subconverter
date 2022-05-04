@@ -50,6 +50,48 @@ test-timeout = 3
 ^https?://(www.)?(g|google).cn https://www.google.com 302
 
 {% endif %}
+{% if request.target == "surgeold" %}
+
+[General]
+bypass-system = true
+skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,localhost,*.local,e.crashlytics.com,captive.apple.com,::ffff:0:0:0:0/1,::ffff:128:0:0:0/1
+#DNS设置或根据自己网络情况进行相应设置
+bypass-tun = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
+dns-server = 119.29.29.29,223.5.5.5
+
+[URL Rewrite]
+^https?://(www.)?(g|google).cn https://www.google.com 302
+
+{% endif %}
+{% if request.target == "surgemini" %}
+
+[General]
+loglevel = notify
+bypass-system = true
+skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, localhost, *.local, *.crashlytics.com, :ffff:0:0:0:0/1, ::ffff:128:0:0:0/1
+bypass-tun = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
+dns-server = system, 119.29.29.29, 223.6.6.6
+doh-server = https://dns.alidns.com/dns-query
+external-controller-access = China@0.0.0.0:8233
+allow-wifi-access = true
+enhanced-mode-by-rule = false
+exclude-simple-hostnames = true
+show-error-page-for-reject = true
+ipv6 = true
+replica = false
+http-listen = 0.0.0.0:8234
+socks5-listen = 0.0.0.0:8235
+wifi-access-http-port = 6152
+wifi-access-socks5-port = 6153
+internet-test-url = http://wifi.vivo.com.cn/generate_204
+proxy-test-url = http://cp.cloudflare.com
+test-timeout = 3
+
+[URL Rewrite]
+^https?://(www.)?(g|google).cn https://www.google.com 302
+
+{% endif %}
+
 {% if request.target == "loon" %}
 
 [General]
