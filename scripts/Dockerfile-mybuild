@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.17
 ARG THREADS="4"
 ARG SHA=""
 
@@ -32,7 +32,7 @@ RUN apk add --no-cache --virtual .build-tools git g++ build-base linux-headers c
     cmake . && \
     make install -j $THREADS && \
     cd .. && \
-    git clone --branch custom https://github.com/wzqwwq/subconverter --depth=1 && \
+    git clone --branch master https://github.com/wzqwwq/subconverter --depth=1 && \
     cd subconverter && \
     [ -n "$SHA" ] && sed -i 's/\(v[0-9]\.[0-9]\.[0-9]\)/\1-'"$SHA"'/' src/version.h;\
     cmake -DCMAKE_BUILD_TYPE=Release . && \

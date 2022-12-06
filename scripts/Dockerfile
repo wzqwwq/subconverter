@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.17
 LABEL maintainer "tindy.it@gmail.com"
 ARG THREADS="4"
 ARG SHA=""
