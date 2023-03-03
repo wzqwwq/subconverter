@@ -7,9 +7,9 @@ Utility to convert between various proxy subscription formats.
 [![GitHub release](https://img.shields.io/github/release/tindy2013/subconverter.svg)](https://github.com/tindy2013/subconverter/releases)
 [![GitHub license](https://img.shields.io/github/license/tindy2013/subconverter.svg)](https://github.com/tindy2013/subconverter/blob/master/LICENSE)
 
-[Docker README](https://github.com/tindy2013/subconverter/blob/master/README-docker.md)
+[Docker README](https://github.com/wzqwwq/subconverter/blob/master/README-docker.md)
 
-[中文文档](https://github.com/tindy2013/subconverter/blob/master/README-cn.md)
+[中文文档](https://github.com/wzqwwq/subconverter/blob/master/README-cn.md)
 
 - [subconverter](#subconverter)
   - [Supported Types](#supported-types)

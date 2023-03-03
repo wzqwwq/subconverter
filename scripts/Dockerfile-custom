@@ -29,10 +29,10 @@ RUN apk add --no-cache --virtual .build-tools git g++ build-base linux-headers c
     cd .. && \
     git clone https://github.com/ToruNiina/toml11 --depth=1 && \
     cd toml11 && \
-    cmake . && \
+    cmake -DCMAKE_CXX_STANDARD=11 . && \
     make install -j $THREADS && \
     cd .. && \
-    git clone --branch master https://github.com/wzqwwq/subconverter --depth=1 && \
+    git clone https://github.com/wzqwwq/subconverter --depth=1 && \
     cd subconverter && \
     [ -n "$SHA" ] && sed -i 's/\(v[0-9]\.[0-9]\.[0-9]\)/\1-'"$SHA"'/' src/version.h;\
     cmake -DCMAKE_BUILD_TYPE=Release . && \
