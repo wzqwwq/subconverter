@@ -5,7 +5,7 @@ common:
   enable_insert: true
   insert_url: []
   prepend_insert_url: true
-  exclude_remarks: ["(到期|剩余流量|时间|官网|产品|平台|群组)"]
+  exclude_remarks: ["(到期|剩余流量|时间|官网|产品|平台)"]
   include_remarks: []
   enable_filter: false
   filter_script: ""
@@ -59,8 +59,7 @@ node_pref:
 
 managed_config:
   write_managed_config: true
-  # managed_config_prefix: "http://127.0.0.1:25500"
-  managed_config_prefix: "https://mysub.wwzq.xyz"
+  managed_config_prefix: "http://127.0.0.1:25500"
   config_update_interval: 86400
   config_update_strict: false
   quanx_device_id: ""
