@@ -54,6 +54,10 @@ COPY --from=builder /subconverter/subconverter /usr/bin/
 COPY --from=builder /subconverter/base /base/
 COPY --from=builder /subconverter/scripts/replacements /base/
 
+ENV TZ=Asia/Shanghai
+RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime
+RUN echo $TZ > /etc/timezone
+
 # set entry
 WORKDIR /base
 CMD subconverter
